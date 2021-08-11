@@ -9,7 +9,7 @@ import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.IO
 import kotlin.coroutines.coroutineContext
 
-private const val TAG = "MYLOG"
+const val TAG = "MYLOG"
 
 class MainActivity : AppCompatActivity() {
 
