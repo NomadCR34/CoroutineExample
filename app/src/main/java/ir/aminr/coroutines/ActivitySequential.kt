@@ -21,6 +21,10 @@ class ActivitySequential : AppCompatActivity() {
     private val result2 = "RESULT #2"
     private val jobTimeOut = 600L
 
+    private val handler:CoroutineExceptionHandler = CoroutineExceptionHandler { _, throwable ->
+        Log.i(TAG, "Handle Coroutine exception with message: $throwable")
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_sequential)
@@ -35,7 +39,7 @@ class ActivitySequential : AppCompatActivity() {
     }
 
     private suspend fun fakeApiRequest() {
-        CoroutineScope(Dispatchers.IO).launch {
+        val parentJob = CoroutineScope(Dispatchers.IO).launch(handler) {
             val time = measureTimeMillis {
                 val result1 = async {
                     Log.i(TAG, "fakeApiRequest: Launching job 1")
