@@ -8,7 +8,7 @@ import androidx.databinding.DataBindingUtil
 import ir.aminr.coroutines.databinding.ActivityExample2Binding
 import kotlinx.coroutines.*
 
-class ActivityExample2 : AppCompatActivity() {
+class ActivityCancelJobExample : AppCompatActivity() {
 
     /**
      * handle job cancellation
