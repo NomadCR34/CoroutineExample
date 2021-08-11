@@ -10,23 +10,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Coroutines">
         <activity
-            android:name=".ActivityParallelExample"
+            android:name=".ActivitySequential"
             android:exported="true" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
-            android:name=".ActivityCancelJobExample"
+            android:name=".ActivityParallelExample"
             android:exported="true">
 
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".ActivityCancelJobExample"
             android:exported="true"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

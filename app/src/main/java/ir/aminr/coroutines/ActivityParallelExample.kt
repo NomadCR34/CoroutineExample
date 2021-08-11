@@ -80,7 +80,7 @@ class ActivityParallelExample : AppCompatActivity() {
                 val result2 : Deferred<String> = async {
                     getResultFromApi2()
                 }
-                setTextOnMainThread(result1.await())
+                setTextOnMainThread(result1.await())//wait until get the result 1
                 setTextOnMainThread(result2.await())
 
             }
