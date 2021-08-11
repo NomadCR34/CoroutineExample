@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ProgressBar
 import androidx.databinding.DataBindingUtil
-import ir.aminr.coroutines.databinding.ActivityExample2Binding
+import ir.aminr.coroutines.databinding.ActivityCancelTaskBinding
 import kotlinx.coroutines.*
 
 class ActivityCancelJobExample : AppCompatActivity() {
@@ -20,11 +20,11 @@ class ActivityCancelJobExample : AppCompatActivity() {
 
     private lateinit var job:CompletableJob
 
-    private lateinit var binding:ActivityExample2Binding
+    private lateinit var binding:ActivityCancelTaskBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_example2)
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_cancel_task)
 
 
         binding.jobButton.setOnClickListener {

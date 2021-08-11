@@ -4,8 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
-import ir.aminr.coroutines.databinding.ActivityExample3Binding
-import ir.aminr.coroutines.databinding.ActivityMainBinding
+import ir.aminr.coroutines.databinding.ActivityParallelBinding
 import kotlinx.coroutines.*
 import kotlin.system.measureTimeMillis
 
@@ -15,14 +14,14 @@ class ActivityParallelExample : AppCompatActivity() {
      *
      * */
 
-    private lateinit var binding: ActivityExample3Binding
+    private lateinit var binding: ActivityParallelBinding
     private val result1 = "RESULT #1"
     private val result2 = "RESULT #2"
     private val jobTimeOut = 600L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_example3)
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_parallel)
 
         CoroutineScope(Dispatchers.IO).launch {
             fakeApiRequest2()
